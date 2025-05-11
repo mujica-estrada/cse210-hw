@@ -39,5 +39,29 @@ class Program
             }
         }
         Console.WriteLine($"The max is: {max}");
+
+        int smallestPositive = 999999;
+        foreach (int number in numbers)
+        {
+            if (number > 0 && number < smallestPositive)
+            {
+                smallestPositive = number;
+            }
+        }
+        if (smallestPositive != 999999)
+        {
+            Console.WriteLine($"The smallest positive number is: {smallestPositive}");
+        }
+        else
+        {
+            Console.WriteLine("There were no positive numbers.");
+        }
+
+        numbers.Sort();
+        Console.WriteLine("The sorted list is:");
+        foreach (int number in numbers)
+        {
+            Console.WriteLine(number);
+        }    
     }
 }
